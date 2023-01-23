@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_12_193043) do
+ActiveRecord::Schema.define(version: 2023_01_18_170542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,28 @@ ActiveRecord::Schema.define(version: 2023_01_12_193043) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "churches", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "denomination"
+    t.string "website"
+    t.string "pastor"
+    t.string "instagram"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string "title"
+    t.string "verse"
+    t.bigint "church_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["church_id"], name: "index_notes_on_church_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -59,8 +81,11 @@ ActiveRecord::Schema.define(version: 2023_01_12_193043) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "notes", "churches"
+  add_foreign_key "notes", "users"
 end

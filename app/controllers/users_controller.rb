@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  skip_before_action :authorize
+  before_action only: [:show, :update, :destroy]
 
   # GET /users
   def index
@@ -10,19 +11,44 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    user = User.find_by(id: session[:user_id])
+    if user
+      render json: user
+    else
+      render json: { message: "Not logged in" }, status: 404
+    end
   end
 
   # POST /users
-  def create
-    @user = User.new(user_params)
+  # def create
+  #   @user = User.new(user_params)
 
-    if @user.save
-      render json: @user, status: :created, location: @user
+  #   if @user.save
+  #     render json: @user, status: :created, location: @user
+  #   else
+  #     render json: @user.errors, status: :unprocessable_entity
+  #   end
+  # end
+
+  def create
+    user = User.create!(user_params)
+    user.avatar.attach(params[:avatar])
+    if user
+    session[:user_id] = user.id
+    render json: user, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+        render json: {error: user.errors}, status: :unprocessable_entitiy
     end
   end
+
+
+
+  # FOR IMAGE 
+  # def create
+  #   image = Image.create(image_params)
+  #   render json: { image: image, picture: picture}
+  # end
+
 
   # PATCH/PUT /users/1
   def update
@@ -41,11 +67,18 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(id: session[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :username, :email, :town, :state, :home_church, :instagram, :bio, :avatar)
+      params.permit(:first_name, :last_name, :username, :email, :town, :state, :home_church, :instagram, :bio, :avatar, :password)
     end
+
+
+    # IMAGE 
+    def image_params
+      params.permit(:caption)
+    end
+
 end
