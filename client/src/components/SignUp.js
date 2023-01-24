@@ -4,7 +4,6 @@ function SignUp({ user, setUser }) {
 
     const [selectedImage, setSelectedImage] = useState(null)
 
-
     // State for input values in sign up form 
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')

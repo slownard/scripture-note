@@ -56,16 +56,6 @@ function Login({ onLogin }) {
                     <button onClick={() => setLogin(false)}>LOGIN
                     </button >
 
-                    {/* <input
-
-                        onClick={() => {
-                            //     history.push("/Home")
-
-                        }}
-                        className='submit' type="submit" value="Login"
-
-                    /> */}
-
                     <button className='submit '>
                         <Link className="signup" to="/Signup">
                             Signup

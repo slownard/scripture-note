@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "/notes", to: "notes#create"
 
   get "/churches", to: "churches#show"
-  post "/addchurches", to: "churches#create"
+  post "/churches", to: "churches#create"
   
 
   # Routing logic: fallback requests for React Router.

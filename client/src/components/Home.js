@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
+import ChurchContainer from "./ChurchContainer";
 import Nav from "./Nav";
 import NoteForm from "./NoteForm";
 import NotesContainer from "./NotesContainer";
 import NoteSearch from "./NoteSearch";
 
 function Home() {
-    // nav bar 
-    // note container 
-    // note form 
 
     const [note, setNote] = useState([])
 
@@ -17,20 +15,6 @@ function Home() {
     //         .then((res) => res.json())
     //         .then((data) => setNote(data))
     // }, [])
-
-
-    // function handleLogOut() {
-
-    //     fetch('/logout', {
-    //         method: "DELETE"
-    //     })
-    //         .then((res) => {
-    //             if (res.ok) {
-    //                 setUser(null)
-    //             }
-    //         })
-    // }
-
 
     function addNewNote({ newNote }) {
 
@@ -43,24 +27,15 @@ function Home() {
         })
             .then((res) => res.json())
             .then((data) => setNote([data, ...note]));
-
     }
-    // 
-
-
-
-
-    // note search 
 
     return (
         <div>
 
-            <Nav />
-
+            {/* <Nav /> */}
             <NotesContainer note={note} />
             <NoteForm addNewNote={addNewNote} />
             <NoteSearch />
-
 
         </div>
     )

@@ -63,3 +63,61 @@ code {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+
+/* STYLING FOR CHURCH CONTAINER AND CARDS */
+.churches {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 60px;
+}
+
+.cards__item {
+  display: flex;
+  padding: 1rem;
+  width: 31%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.church__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.church__title {
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.church__text,
+.church__detail a {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.church__detail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.church__detail a {
+  text-align: left;
+}
