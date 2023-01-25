@@ -4,7 +4,6 @@ import Nav from './Nav';
 import Login from './Login';
 import Home from './Home';
 import SignUp from './SignUp';
-import ChurchForm from './ChurchForm';
 import ChurchContainer from './ChurchContainer';
 function App() {
     const [user, setUser] = useState(null)
@@ -21,10 +20,23 @@ function App() {
     }, [])
     console.log(user)
 
+    function handleLogOut() {
+        fetch('/logout', {
+            method: "DELETE"
+        }).then(res => {
+            if (res.ok) {
+                setUser(null)
+            }
+        })
+    }
+
+
 
     return (
         <div class="App">
-            <Nav />
+
+            <Nav user={user} handleLogOut={handleLogOut} />
+
             <Routes>
                 <Route exact path="/" element={<Home user={user} />}></Route>
 
@@ -33,11 +45,7 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
 
                 <Route path="/churches"
-
-                    element={<ChurchContainer />}
-                // element={<ChurchForm />}
-
-                />
+                    element={<ChurchContainer />} />
             </Routes>
 
         </div>

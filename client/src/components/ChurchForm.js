@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function ChurchForm({ addNewChurch }) {
 
-    const [churchImage, setChurchImage] = useState(null)
+    const [avatar, setChurchAvatar] = useState(null)
     const [name, setChurchName] = useState('')
     const [address, setChurchAddress] = useState('')
     const [denomination, setDenomination] = useState('')
@@ -10,18 +10,28 @@ function ChurchForm({ addNewChurch }) {
     const [pastor, setPastor] = useState('')
     const [instagram, setInstagram] = useState('')
 
-    function handleSubmitChurch(e) {
+    const churchForm = useRef()
+
+    const handleSubmitChurch = (e) => {
 
         e.preventDefault()
 
-        const newChurch = {
-            name, address, denomination, website, pastor, instagram
-        }
-        addNewChurch(newChurch)
-    }
+        const formData = new FormData()
+        formData.append('name', name)
+        formData.append('address', address)
+        formData.append('denomination', denomination)
+        formData.append('website', website)
+        formData.append('pastor', pastor)
+        formData.append('instagram', instagram)
+        formData.append('avatar', avatar)
 
-    const newChurch = {
-        name, address, denomination, website, pastor, instagram
+        fetch('/churches', {
+            method: 'POST',
+            // headers: {
+            //     "Content-Type": "application/json"
+            // },
+            body: formData
+        })
     }
 
     return (
@@ -79,12 +89,10 @@ function ChurchForm({ addNewChurch }) {
                 />
 
                 <input type="file"
-                    onChange={e => setChurchImage(e.target.value)}
-                    value={churchImage} />
+                    onChange={e => setChurchAvatar(e.target.files[0])}
+                    ref={churchForm}
 
-                {/* <input type="submit"
-                    value="Submit"
-                /> */}
+                />
 
 
                 <button type="submit">ADD CHURCH </button>

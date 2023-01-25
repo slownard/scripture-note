@@ -12,37 +12,39 @@ function ChurchContainer() {
     }, [])
     console.log(church);
 
+    // function addNewChurch(newChurch) {
 
+    //     fetch('/churches', {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(newChurch)
+    //     })
+    //         .then((res) => res.json())
+    //         .then((data) => setChurch([data, ...church]));
+    // }
 
-    function addNewChurch(newChurch) {
-
-        fetch('/churches', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newChurch)
+    const removeCard = (church) => {
+        fetch(`/churches/${church.id}`, {
+            method: "DELETE",
         })
-            .then((res) => res.json())
-            .then((data) => setChurch([data, ...church]));
+        console.log(church.id)
     }
 
-
     const mapChurches = church.map((church) => {
-        return <ChurchCard key={church.id} church={church} />
+        return <ChurchCard key={church.id} church={church} removeCard={removeCard} />
     })
+
+
 
     return (
         <div>
-
-            {/* <Nav /> */}
-
-            <ChurchForm addNewChurch={addNewChurch} />
+            <ChurchForm />
 
             <ul className="churches">
                 {mapChurches}
             </ul>
-
 
         </div>
     )

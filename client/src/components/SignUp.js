@@ -37,8 +37,6 @@ function SignUp({ user, setUser }) {
         })
     }
 
-
-
     return (
         <div class="signup-form">
             <h2>Signup: </h2>

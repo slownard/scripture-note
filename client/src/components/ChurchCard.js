@@ -1,6 +1,6 @@
 import React from "react";
 
-function ChurchCard({ church }) {
+function ChurchCard({ church, removeCard }) {
 
     return (
 
@@ -8,14 +8,15 @@ function ChurchCard({ church }) {
             <div className="card">
 
                 {/* use image tag for avatar */}
-                {/* <img
-                    src={image}
-                    alt={name}
-                    className="church__image"
-                /> */}
 
                 <div className="church__content">
 
+                    <img
+                        src={church.avatar}
+                        alt="Church image"
+
+                        className="church__image"
+                    />
                     <div className="church__title">{church.name}</div>
 
                     <p className="church__text">{church.denomination}  </p>
@@ -26,10 +27,14 @@ function ChurchCard({ church }) {
 
                         <a href={"https://www.google.com/maps/search/?api=1&query=" + church.name} >{church.address}</a>
 
-                        <a> {church.instagram} </a>
+                        <a>IG: @{church.instagram} </a>
+
+                        <span></span>
 
                         <a> {church.website} </a>
                     </div>
+
+                    <button className="deletechurch" onClick={() => removeCard(church)}> x </button>
                 </div>
             </div>
         </li>

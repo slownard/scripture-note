@@ -1,5 +1,8 @@
 class ChurchesController < ApplicationController
+
+  skip_before_action :authorize, only: [:create, :show]
   before_action :set_church, only: [:show, :update, :destroy]
+
 
   # GET /churches
   def index
@@ -16,9 +19,9 @@ class ChurchesController < ApplicationController
   # POST /churches
   def create
     @church = Church.new(church_params)
-
     if @church.save
       render json: @church, status: :created, location: @church
+      # render json: ChurchSerializer.new(@church).serializable_hash[:data][:attributes], status: :created, location: @church
     else
       render json: @church.errors, status: :unprocessable_entity
     end
@@ -46,6 +49,6 @@ class ChurchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def church_params
-      params.require(:church).permit(:name, :address, :denomination, :website, :pastor, :instagram, :avatar)
+      params.permit(:name, :address, :denomination, :website, :pastor, :instagram, :avatar)
     end
 end

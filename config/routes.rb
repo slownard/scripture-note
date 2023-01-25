@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :notes, only:[:show, :create, :index]
-  resources :churches, only:[:show, :create, :index]
+  resources :churches, only:[:show, :create, :index, :destroy]
   # get 'sessions/create'
   # get 'sessions/destroy'
   resources :users, only:[:show, :create, :index]
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"
+
   get "/me", to: "users#show"
   delete "/logout", to: "sessions#destroy"
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
 
   get "/churches", to: "churches#show"
   post "/churches", to: "churches#create"
+  delete "/churches", to: "churches#destroy"
   
 
   # Routing logic: fallback requests for React Router.

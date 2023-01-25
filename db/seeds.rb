@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create! = (first_name: "",last_name: "",  username: "", email: "", town: "", state: "", home_church: "", instagram: "", bio: "", avatar_file_name: "", avatar_content_type: "",  )
+# User.create! = (first_name: "",last_name: "",  username: "", email: "", town: "", state: "", home_church: "", instagram: "", bio: "", avatar_file_name: "", avatar_content_type: "",  )
