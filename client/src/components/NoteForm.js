@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function NoteForm({ addNewNote }) {
 
@@ -9,7 +9,6 @@ function NoteForm({ addNewNote }) {
     const [pdf, setPdf] = useState(null)
 
     const handleSubmit = (e) => {
-
         e.preventDefault()
 
         // fetch('/', {
@@ -28,10 +27,28 @@ function NoteForm({ addNewNote }) {
         addNewNote(newNote)
     }
 
+    const [churches, setChurches] = useState([])
+
+    useEffect(() => {
+        fetch('/churches')
+            .then(res => res.json())
+            .then((data) => setChurches(data));
+    }, [])
+    console.log(churches);
+
+    const mapC = () => {
+        return churches.map(c => (
+            <option name={c.name} id={c.name}>
+                {c.name}
+            </option>
+        ))
+    }
+
     return (
         <div class="add-note">
             <h2>Add note: </h2>
             <form onSubmit={handleSubmit}>
+
 
                 <input
                     type="text"
@@ -41,6 +58,7 @@ function NoteForm({ addNewNote }) {
                     value={title}
                 />
 
+
                 <input
                     type="text"
                     name="verse"
@@ -49,21 +67,20 @@ function NoteForm({ addNewNote }) {
                     value={verse}
                 />
 
-                <input
-                    type="text"
-                    name="churchId"
-                    placeholder="churchId"
-                    onChange={(e) => setChurchId(e.target.value)}
-                    value={churchId}
-                />
+                <label>Select church</label>
+                <select>
+                    {mapC()}
+                </select>
 
-                <input
+
+                {/* <input
                     type="text"
                     name="UserId"
                     placeholder="UserId"
                     onChange={(e) => setUserId(e.target.value)}
                     value={userId}
-                />
+                /> */}
+
 
                 <input
                     type="file"
@@ -77,7 +94,7 @@ function NoteForm({ addNewNote }) {
 
             </form>
 
-        </div>
+        </div >
     )
 }
 

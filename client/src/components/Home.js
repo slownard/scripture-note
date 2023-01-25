@@ -16,6 +16,23 @@ function Home() {
     //         .then((data) => setNote(data))
     // }, [])
 
+    // const [selectChurch, setselectChurch] = useState([])
+    // const [church, setChurch] = useState([])
+
+    // function churchdropdown() {
+
+    //     useEffect(() => {
+    //         fetch('/churches')
+    //             .then(res => res.json())
+    //             .then((data) => setChurch(data))
+    //     }, [])
+    //     const mapC = churches.map((church) => {
+    //         return (
+    //             { value: church.id, label: church.name }
+    //         )
+    //     })
+    // }
+
     function addNewNote({ newNote }) {
 
         fetch('/notes', {
@@ -32,7 +49,6 @@ function Home() {
     return (
         <div>
 
-            {/* <Nav /> */}
             <NotesContainer note={note} />
             <NoteForm addNewNote={addNewNote} />
             <NoteSearch />
