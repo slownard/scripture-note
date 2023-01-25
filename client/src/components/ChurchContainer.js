@@ -36,8 +36,6 @@ function ChurchContainer() {
         return <ChurchCard key={church.id} church={church} removeCard={removeCard} />
     })
 
-
-
     return (
         <div>
             <ChurchForm />

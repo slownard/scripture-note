@@ -5,6 +5,9 @@ import Login from './Login';
 import Home from './Home';
 import SignUp from './SignUp';
 import ChurchContainer from './ChurchContainer';
+import Profile from './Profile';
+
+
 function App() {
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
@@ -44,8 +47,13 @@ function App() {
 
                 <Route path="/signup" element={<SignUp />} />
 
+                <Route path="/profile"
+                    element={<Profile user={user} />} />
+
                 <Route path="/churches"
                     element={<ChurchContainer />} />
+
+
             </Routes>
 
         </div>

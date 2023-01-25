@@ -2,6 +2,9 @@ import React from "react";
 
 function ChurchCard({ church, removeCard }) {
 
+
+    console.log(church.avatar_url)
+
     return (
 
         <li className="cards__item">
@@ -11,8 +14,8 @@ function ChurchCard({ church, removeCard }) {
 
                 <div className="church__content">
 
-                    <img
-                        src={church.avatar}
+                    <img height="300" width="250"
+                        src={church.avatar_url}
                         alt="Church image"
 
                         className="church__image"
@@ -21,7 +24,7 @@ function ChurchCard({ church, removeCard }) {
 
                     <p className="church__text">{church.denomination}  </p>
 
-                    <a>{church.pastor} </a>
+                    <a>Lead Pastor: {church.pastor} </a>
 
                     <div className="church__detail">
 

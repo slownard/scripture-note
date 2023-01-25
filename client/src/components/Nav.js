@@ -14,9 +14,9 @@ function Nav({ user, handleLogOut }) {
             </div>
 
             <div className="navlinks">
-                {/* <NavLink className="padding" to="/home"
+                <NavLink className="padding" to="/"
                     style={({ isActive }) =>
-                        (isActive ? { color: 'blue' } : { color: 'black' })}>Home(add icon)</NavLink> */}
+                        (isActive ? { color: 'white' } : { color: 'black' })}>Home(add icon)</NavLink>
 
                 <NavLink className="padding" to="/profile" style={({ isActive }) =>
                     (isActive ? { color: 'white' } : { color: 'black' })}>Profile(add icon) </NavLink>
