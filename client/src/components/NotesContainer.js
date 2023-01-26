@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NoteCard from "./NoteCard";
 import NoteSearch from "./NoteSearch";
+
 
 function NotesContainer() {
 
@@ -8,6 +9,17 @@ function NotesContainer() {
     //     return
     //     <NoteCard notes={notes} />
     // })
+
+    const [note, setNote] = useState([])
+
+    useEffect(() => {
+        fetch('/notes')
+            .then(res => res.json())
+            .then((data) => setNote(data));
+    }, [])
+    console.log(note);
+
+
 
 
     return (

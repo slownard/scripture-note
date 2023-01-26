@@ -88,7 +88,8 @@ function ChurchForm({ addNewChurch }) {
                     value={instagram}
                 />
 
-                <input type="file"
+                <input
+                    type="file"
                     onChange={e => setChurchAvatar(e.target.files[0])}
                     ref={churchForm}
 

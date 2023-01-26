@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 function NoteForm({ addNewNote }) {
 
@@ -8,27 +8,26 @@ function NoteForm({ addNewNote }) {
     const [userId, setUserId] = useState('')
     const [pdf, setPdf] = useState(null)
 
+    const noteForm = useRef()
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // fetch('/', {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Accepts': 'application/json'
-        //     },
-        //     body: JSON.stringify(title, verse, churchId, userId, pdf)
-        // })
+        const formData = new FormData()
+        formData.append('title', title)
+        formData.append('verse', verse)
+        formData.append('churchId', churchId)
+        formData.append('userId', userId)
+        formData.append('pdf', pdf)
 
-        const newNote = {
-            title, verse, churchId, userId, pdf
-        }
-
-        addNewNote(newNote)
+        fetch('/notes', {
+            method: 'POST',
+            body: formData
+        })
     }
 
+    // church state for mapping church names into dropdown opt. 
     const [churches, setChurches] = useState([])
-
     useEffect(() => {
         fetch('/churches')
             .then(res => res.json())
@@ -84,10 +83,9 @@ function NoteForm({ addNewNote }) {
 
                 <input
                     type="file"
-                    name="pdf"
-                    placeholder="pdf"
-                    onChange={(e) => setPdf(e.target.value)}
-                    value={pdf}
+                    onChange={e => setPdf(e.target.files[0])}
+                    ref={noteForm}
+
                 />
                 <button type="submit">ADD NOTE</button>
 

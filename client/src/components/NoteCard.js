@@ -14,6 +14,7 @@ function NoteCard({ notes }) {
 
         <div classname="notecard">
 
+
             <h1>{title} </h1>
             <h2>{verse} </h2>
             <h3>{userId} </h3>
