@@ -1,26 +1,54 @@
-import React from "react";
-// import { Viewer, Worker } from '@react-pdf-viewer/core'
-// import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
+import React, { useState } from "react";
+import { Viewer, Worker } from '@react-pdf-viewer/core'
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
+
+// import { Document, Page } from 'react-pdf';
 
 
+function NoteCard({ note, removeNote }) {
 
-function NoteCard({ notes }) {
-
-    const {
-        title, verse, churchId, userId, pdf
-    } = notes
+    // const [viewPdf, setViewPdf] = useState(null)
+    console.log(note.file_url)
 
     return (
 
-        <div classname="notecard">
+        <li className="cards__item">
+            <div className="card">
+
+                <div className="note__content">
+
+                    <div className="note__title">{note.title}</div>
+
+                    <p className="note__text">{note.verse}  </p>
 
 
-            <h1>{title} </h1>
-            <h2>{verse} </h2>
-            <h3>{userId} </h3>
-            <h3>{churchId} </h3>
+                    <div className="note__detail">
+                        {/* pdf goes in here */}
+                        {/* <Worker workerUrl={note.file} >
+                        </Worker> */}
 
-        </div>
+                        {/* <Document file={note.file} onLoadSuccess={onDocumentLoadSuccess}>
+                            <Page pageNumber={pageNumber} />
+                        </Document> */}
+
+                        {/* <p>
+                            Page {pageNumber} of {numPages}
+                        </p> */}
+
+                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
+                            <Viewer fileUrl={note.file_url} />
+                        </Worker>
+
+
+
+                    </div>
+
+                    {/* <button type="submit" className="view-button">View PDF</button> */}
+
+                    <button className="deletenote" onClick={() => removeNote(note)}> x </button>
+                </div>
+            </div>
+        </li>
     )
 }
 export default NoteCard;

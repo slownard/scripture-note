@@ -6,10 +6,12 @@ import Home from './Home';
 import SignUp from './SignUp';
 import ChurchContainer from './ChurchContainer';
 import Profile from './Profile';
+import Footer from './Footer';
+
 
 
 function App() {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState("")
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -37,27 +39,17 @@ function App() {
 
     return (
         <div class="App">
-
             <Nav user={user} handleLogOut={handleLogOut} />
-
             <Routes>
                 <Route exact path="/" element={<Home user={user} />}></Route>
-
                 <Route exact path="/login" element={<Login onLogin={setUser} />}></Route>
-
                 <Route path="/signup" element={<SignUp />} />
-
                 <Route path="/profile"
                     element={<Profile user={user} />} />
-
                 <Route path="/churches"
                     element={<ChurchContainer />} />
-
-
             </Routes>
-
         </div>
-
     );
 }
 

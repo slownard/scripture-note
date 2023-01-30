@@ -141,6 +141,10 @@ code {
   align-items: center;
   font-size: 22px;
   padding-right: 10px;
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .deletechurch {
@@ -176,4 +180,27 @@ code {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+.notecontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }

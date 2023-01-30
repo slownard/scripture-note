@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 
-function NoteForm({ addNewNote }) {
+function NoteForm() {
 
     const [title, setTitle] = useState('')
     const [verse, setVerse] = useState('')
     const [churchId, setChurchId] = useState('')
     const [userId, setUserId] = useState('')
-    const [pdf, setPdf] = useState(null)
+    const [file, setFile] = useState(null)
 
     const noteForm = useRef()
 
@@ -18,7 +18,7 @@ function NoteForm({ addNewNote }) {
         formData.append('verse', verse)
         formData.append('churchId', churchId)
         formData.append('userId', userId)
-        formData.append('pdf', pdf)
+        formData.append('file', file)
 
         fetch('/notes', {
             method: 'POST',
@@ -42,6 +42,11 @@ function NoteForm({ addNewNote }) {
             </option>
         ))
     }
+
+
+
+
+
 
     return (
         <div class="add-note">
@@ -71,7 +76,6 @@ function NoteForm({ addNewNote }) {
                     {mapC()}
                 </select>
 
-
                 {/* <input
                     type="text"
                     name="UserId"
@@ -80,15 +84,18 @@ function NoteForm({ addNewNote }) {
                     value={userId}
                 /> */}
 
-
                 <input
                     type="file"
-                    onChange={e => setPdf(e.target.files[0])}
+                    onChange={e => {
+                        setFile(e.target.files[0]
+
+
+                        )
+                    }}
                     ref={noteForm}
 
                 />
                 <button type="submit">ADD NOTE</button>
-
 
             </form>
 

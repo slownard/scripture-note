@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login({ onLogin }) {
     const [username, setUsername] = useState('')
@@ -40,27 +40,21 @@ function Login({ onLogin }) {
             <h2>Login:</h2>
 
             <form onSubmit={handleLogin}>
-
                 <div className='user-box'>
-
                     <label>Username: </label>
                     <input
                         type="text" name='' required='' onChange={handleChangeUsername} value={username} placeholder='username'
                     />
-
                     <label>Password: </label>
                     <input
                         type="password" onChange={handleChangePassword} value={password} placeholder='password'
                     />
-
                     <button onClick={() => setLogin(false)}>LOGIN
                     </button >
-
                     <button className='submit '>
                         <Link className="signup" to="/Signup">
-                            Signup
+                            Don't have account?Signup
                         </Link>
-
                     </button>
                 </div>
             </form>

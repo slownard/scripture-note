@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-function ChurchForm({ addNewChurch }) {
+function ChurchForm() {
 
     const [avatar, setChurchAvatar] = useState(null)
     const [name, setChurchName] = useState('')
@@ -13,7 +13,6 @@ function ChurchForm({ addNewChurch }) {
     const churchForm = useRef()
 
     const handleSubmitChurch = (e) => {
-
         e.preventDefault()
 
         const formData = new FormData()
@@ -27,9 +26,6 @@ function ChurchForm({ addNewChurch }) {
 
         fetch('/churches', {
             method: 'POST',
-            // headers: {
-            //     "Content-Type": "application/json"
-            // },
             body: formData
         })
     }

@@ -8,28 +8,31 @@ function Nav({ user, handleLogOut }) {
         <div className="nav">
 
             <div className="navbar">
-
                 <h1>Scripture Note</h1>
-
             </div>
 
             <div className="navlinks">
                 <NavLink className="padding" to="/"
                     style={({ isActive }) =>
-                        (isActive ? { color: 'white' } : { color: 'black' })}>Home(add icon)</NavLink>
+                        (isActive ? { color: 'white' } : { color: 'black' })}>Home</NavLink>
+
+                <span></span>
 
                 <NavLink className="padding" to="/profile" style={({ isActive }) =>
-                    (isActive ? { color: 'white' } : { color: 'black' })}>Profile(add icon) </NavLink>
+                    (isActive ? { color: 'white' } : { color: 'black' })}>Profile </NavLink>
+
+                <span></span>
 
                 <NavLink className="padding" to="/churches" style={({ isActive }) =>
-                    (isActive ? { color: 'white' } : { color: 'black' })} >Church(add icon)</NavLink>
+                    (isActive ? { color: 'white' } : { color: 'black' })} >Church</NavLink>
+
+                <span></span>
 
                 <NavLink>
                     {user ? <button className="logout" onClick={handleLogOut}>Log out</button> : null}
                 </NavLink>
 
-
-
+                <span></span>
             </div>
         </div >
     )

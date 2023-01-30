@@ -3,11 +3,9 @@ class ChurchesController < ApplicationController
   skip_before_action :authorize, only: [:create, :show, :index]
   before_action :set_church, only: [:show, :update, :destroy]
 
-
   # GET /churches
   def index
     @churches = Church.all
-
     render json: @churches
   end
 

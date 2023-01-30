@@ -1,9 +1,10 @@
 import React from "react";
 
+
+
 function ChurchCard({ church, removeCard }) {
-
-
     console.log(church.avatar_url)
+
 
     return (
 
@@ -41,8 +42,6 @@ function ChurchCard({ church, removeCard }) {
                 </div>
             </div>
         </li>
-
-
     )
 }
 

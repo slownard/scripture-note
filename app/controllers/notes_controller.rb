@@ -6,7 +6,6 @@ class NotesController < ApplicationController
   # GET /notes
   def index
     @notes = Note.all
-
     render json: @notes
   end
 
@@ -17,10 +16,11 @@ class NotesController < ApplicationController
 
   # POST /notes
   def create
+    byebug
     @note = Note.new(note_params)
-
     if @note.save
-      render json: @note, status: :created, location: @note
+      # render json: @note, status: :created, location: @note
+      render json: NoteSerializer.new(@note).serializable_hash[:data][:attributes], status: :created, location: @note
     else
       render json: @note.errors, status: :unprocessable_entity
     end
@@ -48,6 +48,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :verse, :church_id, :user_id, :file)
+      params.permit(:title, :verse, :church_id, :user_id, :file)
     end
 end
