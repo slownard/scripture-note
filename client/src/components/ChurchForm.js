@@ -34,7 +34,7 @@ function ChurchForm() {
         <div>
             <h2>Add church: </h2>
 
-            <form onSubmit={handleSubmitChurch}>
+            <form onSubmit={handleSubmitChurch} className="churchform" >
 
                 <input
                     type="text"

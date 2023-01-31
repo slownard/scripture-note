@@ -1,8 +1,8 @@
 class NoteSerializer < ActiveModel::Serializer
-  attributes :id, :title, :verse, :file_url
+  attributes :id, :title, :verse, :file
 
 
 
-  # has_one :church
-  # has_one :user
+  has_one :church
+  has_one :user
 end

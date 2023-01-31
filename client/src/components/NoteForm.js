@@ -16,12 +16,13 @@ function NoteForm() {
         const formData = new FormData()
         formData.append('title', title)
         formData.append('verse', verse)
-        formData.append('churchId', churchId)
-        formData.append('userId', userId)
+        formData.append('church_id', churchId)
+        formData.append('user_id', userId)
         formData.append('file', file)
 
         fetch('/notes', {
             method: 'POST',
+            headers: { "Content-Type": "application/json" },
             body: formData
         })
     }
@@ -35,24 +36,23 @@ function NoteForm() {
     }, [])
     console.log(churches);
 
+    const handleChange = (e) => {
+        setChurchId(e.target.value);
+        console.log("get id pls", e.target.value);
+    }
+
     const mapC = () => {
         return churches.map(c => (
-            <option name={c.name} id={c.name}>
+            <option id={c.id} value={c.id}>
                 {c.name}
             </option>
         ))
     }
 
-
-
-
-
-
     return (
         <div class="add-note">
             <h2>Add note: </h2>
-            <form onSubmit={handleSubmit}>
-
+            <form className="noteform" onSubmit={handleSubmit}>
 
                 <input
                     type="text"
@@ -72,7 +72,7 @@ function NoteForm() {
                 />
 
                 <label>Select church</label>
-                <select>
+                <select onChange={handleChange}>
                     {mapC()}
                 </select>
 
@@ -84,18 +84,17 @@ function NoteForm() {
                     value={userId}
                 /> */}
 
-                <input
+                <input className="selectnotefile"
                     type="file"
                     onChange={e => {
                         setFile(e.target.files[0]
-
-
                         )
                     }}
                     ref={noteForm}
-
                 />
-                <button type="submit">ADD NOTE</button>
+
+
+                <button className="submitnote" type="submit">ADD NOTE</button>
 
             </form>
 

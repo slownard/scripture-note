@@ -31,6 +31,7 @@ function App() {
         }).then(res => {
             if (res.ok) {
                 setUser(null)
+                navigate('/login')
             }
         })
     }

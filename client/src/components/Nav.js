@@ -28,8 +28,8 @@ function Nav({ user, handleLogOut }) {
 
                 <span></span>
 
-                <NavLink>
-                    {user ? <button className="logout" onClick={handleLogOut}>Log out</button> : null}
+                <NavLink className="padding">
+                    {user ? <button className="logout" onClick={handleLogOut}>Logout</button> : null}
                 </NavLink>
 
                 <span></span>

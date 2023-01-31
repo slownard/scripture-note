@@ -6,21 +6,27 @@ function Profile({ user }) {
 
 
 
-
-
     return (
         <div class="user">
+            <img class="userimg" src={demouser} height="300" width="250" />
 
-            <img src={demouser} height="300" width="250" />
+            <h1 className="username"> {user.first_name} {user.last_name} | @{user.username}</h1>
+            {/* <h2 class="title"> @{user.username} </h2> */}
 
-            <h2> {user.first_name} {user.last_name} </h2>
-            <h2> Home: {user.town}, {user.state} </h2>
+            <h3> Home: {user.town}, {user.state} </h3>
 
-            <p class="title"> @{user.username} </p>
-            <a> Contact {user.email} </a>
-            <a> Home Church: {user.home_church} </a>
-            <a> instagram: @{user.instagram} </a>
+            {/* <h3 class="title"> @{user.username} </h3> */}
+
+            <ul class="userdetails">
+                <li> Contact: {user.email} </li>
+                <li> Home Church: {user.home_church} </li>
+                <li href={"https://www.instagram.com/" + user.instagram} >IG: {user.instagram}</li>
+            </ul>
         </div>
     )
 }
 export default Profile;
+
+{/* <a href={"https://www.instagram.com/" + user.instagram} >{user.instagram}</a>
+
+<a href={"https://www.google.com/maps/search/?api=1&query=" + name} >{address}</a> */}

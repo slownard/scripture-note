@@ -52,7 +52,7 @@ code {
   }
 }
 
-.signup-form {
+/* .signup-form {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -60,7 +60,7 @@ code {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
+} */
 
 
 /* STYLING FOR CHURCH CONTAINER AND CARDS */
@@ -78,6 +78,7 @@ code {
   display: flex;
   padding: 1rem;
   width: 31%;
+  /* max-width: 250px; */
 }
 
 .card {
@@ -86,6 +87,7 @@ code {
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  /* max-width: 250px; */
 }
 
 .church__content {
@@ -93,6 +95,8 @@ code {
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
+  background-color: lightblue;
+  border: 1px solid black;
 }
 
 .church__title {
@@ -120,6 +124,14 @@ code {
   text-align: left;
 }
 
+.church__image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  /* width: 50%; */
+}
+
 .header {
   display: inline-block;
   width: 100%;
@@ -135,7 +147,8 @@ code {
   align-items: center;
 }
 
-.navlinks {
+/* THIS IS FOR THE NAV BAR */
+/* .navlinks {
   background-color: lightgreen;
   display: flex;
   align-items: center;
@@ -145,35 +158,48 @@ code {
   list-style-type: none;
   margin: 0;
   padding: 0;
+} */
+
+.navlinks {
+  padding: 0;
+  /* background: black; */
+  background-color: lightgreen;
+  font-family: Arial, sans serif;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
-.deletechurch {
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+.padding {
   display: inline-block;
-  font-size: 16px;
+  margin: 20px;
 }
 
 .logout {
   background-color: lightgreen;
-  /* Green */
   border: none;
   color: black;
-  padding: 15px 32px;
+  /* padding: 15px 32px; */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  /* font-size: 16px; */
+  text-transform: uppercase;
+  font-family: Arial, sans serif;
+  font-size: 22px;
+}
+
+.deletechurch {
+  font-size: 10px;
+  padding: 7px 15px 7px 15px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: lightcoral;
 }
 
 .add-note {
   width: 200px;
   padding: 20px;
+
 }
 
 *,
@@ -187,20 +213,411 @@ code {
   flex-direction: column;
 }
 
+
+/* FOR USER PROFILE STYLING */
 .user {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 700px;
   margin: auto;
+  margin-top: 40px;
   text-align: center;
+  background-color: lightblue;
+  border: 1px solid black;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* column-rule-style: dotted; */
 }
 
-.title {
+.userimg {
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
+/* .title {
   color: grey;
   font-size: 18px;
+} */
+
+/* .username {
+  color: darkgray
+} */
+
+.userdetails {
+  /* column-rule-style: dotted; */
+  list-style-type: none;
+
 }
 
 a {
   text-decoration: none;
   font-size: 22px;
   color: black;
+}
+
+/* THIS IS FOR LOGIN FORM */
+
+.main {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 40px;
+  color: darkgreen;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.un {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  /* margin-left: 46px; */
+  margin-left: 5%;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+form.form1 {
+  padding-top: 40px;
+}
+
+.pass {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  /* margin-left: 46px; */
+  margin-left: 5%;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus,
+.pass:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5em;
+  /* color: #fff; */
+  /* background: linear-gradient(to right, darkgreen, lightgreen); */
+  color: black;
+  background-color: lightgreen;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 5%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+  /* text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12); */
+  color: black;
+  /* padding-top: 15px; */
+  /* outline: none; */
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  text-decoration: none
+} */
+
+.signup:hover {
+  text-decoration: underline;
+
+}
+
+@media (max-width: 600px) {
+  .main {
+    border-radius: 0px;
+  }
+}
+
+/* THIS IS FOR SIGN UP FORM */
+
+
+.signup-form form {
+  padding: 0;
+  margin: 0;
+  margin-left: 400px;
+  /* list-style: none; */
+  /* border: 5px solid; */
+  text-align: center;
+}
+
+.signup-form form input {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  min-height: 35px;
+  width: 550px;
+}
+
+.signup-form form input .field-style {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #B0CFE0;
+  /* -webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out; */
+}
+
+.signup-form form input .field-style:focus {
+  box-shadow: 0 0 5px #B0CFE0;
+  border: 1px solid #B0CFE0;
+}
+
+.signup-form form input .field-split {
+  width: 49%
+}
+
+.signup-form form input .field-full {
+  width: 100%;
+}
+
+.signup-form form input input.align-left {
+  float: left;
+}
+
+.signup-form form input input.align-right {
+  float: right;
+}
+
+.signup-form form input textarea {
+  width: 100%;
+  height: 100px;
+}
+
+/* .signupbio {
+  width: 100%;
+  height: 100px;
+} */
+
+.signup-form form input input[type="button"],
+.signup-form form input input[type="submit"] {
+  -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+  box-shadow: inset 0px 1px 0px 0px #3985B1;
+  background-color: #216288;
+  border: 1px solid #17445E;
+  display: inline-block;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 8px 18px;
+  text-decoration: none;
+  font: 12px Arial, Helvetica, sans-serif;
+}
+
+.signup-form form input input[type="button"]:hover,
+.signup-form form input input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+  background-color: #28739E;
+}
+
+.submituser {
+  width: 70px;
+  height: 80px;
+  border: none;
+  outline: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 6px 20px -5px
+}
+
+
+/* THIS IS FOR NOTE FORM */
+.add-note {
+  /* border: 5px solid; */
+  text-align: center;
+  padding: 0;
+  /* margin: 0; */
+  margin-bottom: 3%;
+  margin-left: 600px;
+}
+
+/* .add-note form {
+  padding: 0;
+  margin: 0;
+  margin-left: 300px;
+  list-style: none; */
+/* border: 5px solid;
+  text-align: center;
+} */
+
+.add-note form input {
+  display: block;
+  margin-bottom: 10px;
+  min-height: 35px;
+}
+
+.selectnotefile {
+  margin-top: 15px;
+  margin-left: 0px;
+}
+
+
+
+/* CSS */
+.submitnote {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.submitnote:hover,
+.submitnote:focus {
+  background-color: #07c;
+}
+
+.submitnote:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.submitnote:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+/* THIS IS FOR NOTE CARDS */
+
+/* .note__content {
+  max-width: 300px;
+} */
+
+.notecards__item {
+  display: flex;
+  padding: 4px 16px 4px 16px;
+  margin-left: 450px;
+  /* width: 31%; */
+  /* max-width: 250px; */
+}
+
+.notecard {
+  /* background-color: white; */
+  background-color: lightblue;
+  /* border-radius: 0.25rem; */
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 2%;
+  border: 1px solid black;
+  /* max-width: 250px; */
+  /* margin: 50px; */
+}
+
+
+
+
+
+.viewnote {
+  background-color: #fbeee0;
+  border: 1px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  /* -webkit-user-select: none; */
+  touch-action: manipulation;
+  width: 50%;
+  margin: auto;
+}
+
+.viewnote:hover {
+  background-color: #fff;
+}
+
+.viewnote:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+/* @media (min-width: 768px) {
+  .viewnote {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+} */
+
+
+.deletenote {
+  /* margin: 7px; */
+  font-size: 10px;
+  padding: 7px 15px 7px 15px;
+  /* width: 20px; */
+  margin: auto;
+  margin-top: 10px;
+  background-color: lightcoral;
 }

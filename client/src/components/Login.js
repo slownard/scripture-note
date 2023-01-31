@@ -36,24 +36,28 @@ function Login({ onLogin }) {
     const handleChangePassword = e => setPassword(e.target.value)
 
     return (
-        <div>
-            <h2>Login:</h2>
+        <div class="main" >
+            <p className="sign" align="center" >Sign in</p>
 
-            <form onSubmit={handleLogin}>
+            <form className="form1" onSubmit={handleLogin}>
                 <div className='user-box'>
-                    <label>Username: </label>
-                    <input
+
+                    <input className="un"
                         type="text" name='' required='' onChange={handleChangeUsername} value={username} placeholder='username'
                     />
-                    <label>Password: </label>
-                    <input
+
+
+                    <input className="pass"
                         type="password" onChange={handleChangePassword} value={password} placeholder='password'
                     />
-                    <button onClick={() => setLogin(false)}>LOGIN
+
+                    <button class="submit" align="center"
+                        onClick={() => setLogin(false)}>Sign in
                     </button >
-                    <button className='submit '>
+
+                    <button className="forgot" align="center" >
                         <Link className="signup" to="/Signup">
-                            Don't have account?Signup
+                            Don't have account? Signup
                         </Link>
                     </button>
                 </div>

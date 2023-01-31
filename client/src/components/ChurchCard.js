@@ -18,7 +18,6 @@ function ChurchCard({ church, removeCard }) {
                     <img height="300" width="250"
                         src={church.avatar_url}
                         alt="Church image"
-
                         className="church__image"
                     />
                     <div className="church__title">{church.name}</div>

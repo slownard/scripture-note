@@ -40,7 +40,7 @@ function SignUp({ user, setUser }) {
     return (
         <div class="signup-form">
             <h2>Signup: </h2>
-            <form onSubmit={handleSubmit}>
+            <form className="registration" onSubmit={handleSubmit}>
 
 
                 <input
@@ -116,19 +116,35 @@ function SignUp({ user, setUser }) {
                 />
 
                 <input
+                    classname="signupbio"
                     type="text"
                     name="bio"
                     placeholder="bio"
                     onChange={(e) => setBio(e.target.value)}
                     value={bio}
+
+
+
                 />
+
+                {/* <textarea>
+                    type="text"
+                    name="bio"
+                    placeholder="bio"
+                    onChange={(e) => setBio(e.target.value)}
+                    value={bio}
+                </textarea> */}
+
+
 
 
                 <input type="file"
                     onChange={e => setSelectedImage(e.target.value)}
-                    value={selectedImage} />
+                    value={selectedImage}
 
-                <input type="submit"
+                />
+
+                <input class="submituser" type="submit"
                     value="Submit"
                 />
             </form>
