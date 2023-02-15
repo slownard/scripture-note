@@ -11,7 +11,6 @@ function Login({ onLogin }) {
 
     const handleLogin = (e) => {
         e.preventDefault()
-
         fetch('/login', {
             method: "POST",
             headers: {
@@ -22,7 +21,6 @@ function Login({ onLogin }) {
             .then(res => {
                 if (res.ok) {
                     res.json().then(data => {
-
                         onLogin(data)
                         navigate("/")
                     })

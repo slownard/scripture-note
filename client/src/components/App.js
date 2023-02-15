@@ -8,8 +8,6 @@ import ChurchContainer from './ChurchContainer';
 import Profile from './Profile';
 import Footer from './Footer';
 
-
-
 function App() {
     const [user, setUser] = useState("")
     const navigate = useNavigate()
@@ -36,8 +34,6 @@ function App() {
         })
     }
 
-
-
     return (
         <div class="App">
             <Nav user={user} handleLogOut={handleLogOut} />
@@ -50,6 +46,8 @@ function App() {
                 <Route path="/churches"
                     element={<ChurchContainer />} />
             </Routes>
+
+            <Footer />
         </div>
     );
 }
