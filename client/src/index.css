@@ -629,10 +629,9 @@ form.form1 {
 }
 
 .footer {
-  /* background-color: rgb(173, 175, 173); */
-  background-color: rgb(71, 224, 199);
-  margin-bottom: -10px;
-  margin-left: -10px;
+  background-color: lightgreen;
+  /* margin-bottom: -10px;
+  margin-left: -10px; */
   display: inline-block;
   width: 105%;
   text-align: center;
