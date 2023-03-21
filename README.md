@@ -1,3 +1,27 @@
+## Scipture Note by Bernard Legaspi 
+
+To continually be worked on and to one day be used globally by all churches.
+
+
+Here is what this application does: 
+1. Built user account registration functionality from scratch, empowering users to create and manage their own accounts within the platform
+2. Developed and deployed session-based authentication system for user login, ensuring secure access to the application
+3. Integrated ActiveStorage framework to enable seamless photo and PDF file uploads from users' local devices
+4. Assembled a feature enabling users upload sermon notes and local church details, empowering users and improving the platform's content diversity
+
+How to start application:
+1. Run Rails server
+Command: Rails s
+2. Run Npm 
+Command: npm start --prefix client
+
+
+
+
+
+
+
+
 # Project Template: React/Rails API
 
 ## Description
