@@ -78,7 +78,6 @@ code {
   display: flex;
   padding: 1rem;
   width: 31%;
-  /* max-width: 250px; */
 }
 
 .card {
@@ -87,7 +86,6 @@ code {
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  /* max-width: 250px; */
 }
 
 .church__content {
@@ -129,7 +127,6 @@ code {
   margin-left: auto;
   margin-right: auto;
   border: 1px solid black;
-  /* width: 50%; */
 }
 
 .header {
@@ -138,31 +135,14 @@ code {
   height: 150px;
   display: flex;
   margin-top: -10px;
-  /* background-color: rgb(173, 175, 173); */
   background-color: rgb(71, 224, 199);
-  /* opacity: 0.5; */
   padding: 35px 15px 35px 15px;
   margin-left: -10px;
-  /* padding-bottom: 25px; */
   align-items: center;
 }
 
-/* THIS IS FOR THE NAV BAR */
-/* .navlinks {
-  background-color: lightgreen;
-  display: flex;
-  align-items: center;
-  font-size: 22px;
-  padding-right: 10px;
-
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-} */
-
 .navlinks {
   padding: 0;
-  /* background: black; */
   background-color: lightgreen;
   font-family: Arial, sans serif;
   font-size: 12px;
@@ -178,11 +158,9 @@ code {
   background-color: lightgreen;
   border: none;
   color: black;
-  /* padding: 15px 32px; */
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  /* font-size: 16px; */
   text-transform: uppercase;
   font-family: Arial, sans serif;
   font-size: 22px;
@@ -223,8 +201,6 @@ code {
   text-align: center;
   background-color: lightblue;
   border: 1px solid black;
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* column-rule-style: dotted; */
 }
 
 .userimg {
@@ -232,19 +208,8 @@ code {
   border: 1px solid black;
 }
 
-/* .title {
-  color: grey;
-  font-size: 18px;
-} */
-
-/* .username {
-  color: darkgray
-} */
-
 .userdetails {
-  /* column-rule-style: dotted; */
   list-style-type: none;
-
 }
 
 a {
@@ -311,7 +276,6 @@ form.form1 {
   box-sizing: border-box;
   border: 2px solid rgba(0, 0, 0, 0.02);
   margin-bottom: 50px;
-  /* margin-left: 46px; */
   margin-left: 5%;
   text-align: center;
   margin-bottom: 27px;
@@ -328,8 +292,6 @@ form.form1 {
 .submit {
   cursor: pointer;
   border-radius: 5em;
-  /* color: #fff; */
-  /* background: linear-gradient(to right, darkgreen, lightgreen); */
   color: black;
   background-color: lightgreen;
   border: 0;
@@ -344,24 +306,14 @@ form.form1 {
 }
 
 .forgot {
-  /* text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12); */
   color: black;
-  /* padding-top: 15px; */
-  /* outline: none; */
   padding: 0;
   border: none;
   background: none;
 }
 
-/* a {
-  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-  color: #E1BEE7;
-  text-decoration: none
-} */
-
 .signup:hover {
   text-decoration: underline;
-
 }
 
 @media (max-width: 600px) {
@@ -371,14 +323,10 @@ form.form1 {
 }
 
 /* THIS IS FOR SIGN UP FORM */
-
-
 .signup-form form {
   padding: 0;
   margin: 0;
   margin-left: 400px;
-  /* list-style: none; */
-  /* border: 5px solid; */
   text-align: center;
 }
 
@@ -397,10 +345,6 @@ form.form1 {
   padding: 8px;
   outline: none;
   border: 1px solid #B0CFE0;
-  /* -webkit-transition: all 0.30s ease-in-out;
-	-moz-transition: all 0.30s ease-in-out;
-	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out; */
 }
 
 .signup-form form input .field-style:focus {
@@ -428,11 +372,6 @@ form.form1 {
   width: 100%;
   height: 100px;
 }
-
-/* .signupbio {
-  width: 100%;
-  height: 100px;
-} */
 
 .signup-form form input input[type="button"],
 .signup-form form input input[type="submit"] {
@@ -471,22 +410,11 @@ form.form1 {
 
 /* THIS IS FOR NOTE FORM */
 .add-note {
-  /* border: 5px solid; */
   text-align: center;
   padding: 0;
-  /* margin: 0; */
   margin-bottom: 3%;
   margin-left: 600px;
 }
-
-/* .add-note form {
-  padding: 0;
-  margin: 0;
-  margin-left: 300px;
-  list-style: none; */
-/* border: 5px solid;
-  text-align: center;
-} */
 
 .add-note form input {
   display: block;
@@ -544,35 +472,21 @@ form.form1 {
 
 /* THIS IS FOR NOTE CARDS */
 
-/* .note__content {
-  max-width: 300px;
-} */
-
 .notecards__item {
   display: flex;
   padding: 4px 16px 4px 16px;
   margin-left: 450px;
-  /* width: 31%; */
-  /* max-width: 250px; */
 }
 
 .notecard {
-  /* background-color: white; */
   background-color: lightblue;
-  /* border-radius: 0.25rem; */
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   width: 400px;
   padding: 2%;
   border: 1px solid black;
-  /* max-width: 250px; */
-  /* margin: 50px; */
 }
-
-
-
-
 
 .viewnote {
   background-color: #fbeee0;
@@ -589,7 +503,6 @@ form.form1 {
   text-align: center;
   text-decoration: none;
   user-select: none;
-  /* -webkit-user-select: none; */
   touch-action: manipulation;
   width: 50%;
   margin: auto;
@@ -604,19 +517,9 @@ form.form1 {
   transform: translate(2px, 2px);
 }
 
-/* @media (min-width: 768px) {
-  .viewnote {
-    min-width: 120px;
-    padding: 0 25px;
-  }
-} */
-
-
 .deletenote {
-  /* margin: 7px; */
   font-size: 10px;
   padding: 7px 15px 7px 15px;
-  /* width: 20px; */
   margin: auto;
   margin-top: 10px;
   background-color: lightcoral;
