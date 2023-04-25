@@ -16,15 +16,6 @@ function SignUp({ user, setUser }) {
     const [instagram, setInstagram] = useState('')
     const [bio, setBio] = useState('')
 
-    // const [selectedImage, setSelectedImage] = useState(null)
-    // const [caption, setCaption] = useState('')
-
-    // function handleSubmit() {
-    //     fetch("/post", { method: "POST", headers: { 'Content-Type': 'application/json', }, body: JSON.stringify(caption.selectedImage), })
-    //         .then((res) => res.json())
-    //         .then((res) => { console.log(res); })
-    // }
-
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch('/users', {
@@ -127,21 +118,9 @@ function SignUp({ user, setUser }) {
 
                 />
 
-                {/* <textarea>
-                    type="text"
-                    name="bio"
-                    placeholder="bio"
-                    onChange={(e) => setBio(e.target.value)}
-                    value={bio}
-                </textarea> */}
-
-
-
-
                 <input type="file"
                     onChange={e => setSelectedImage(e.target.value)}
                     value={selectedImage}
-
                 />
 
                 <input class="submituser" type="submit"

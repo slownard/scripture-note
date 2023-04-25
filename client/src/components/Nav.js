@@ -37,6 +37,5 @@ function Nav({ user, handleLogOut }) {
     )
 }
 
-// 
 
 export default Nav;

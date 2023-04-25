@@ -27,7 +27,3 @@ function Profile({ user }) {
     )
 }
 export default Profile;
-
-{/* <a href={"https://www.instagram.com/" + user.instagram} >{user.instagram}</a>
-
-<a href={"https://www.google.com/maps/search/?api=1&query=" + name} >{address}</a> */}

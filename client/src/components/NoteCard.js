@@ -28,21 +28,6 @@ function NoteCard({ note, removeNote }) {
                     <a>{note.church_id} </a>
                     <a>{note.user_id} </a>
 
-
-                    {/* pdf goes in here */}
-                    {/* <Worker workerUrl={note.file} > */}
-                    {/* </Worker> */}
-
-                    {/* <Document file={note.file_url} > */}
-                    {/* <Page pageNumber={pageNumber} /> */}
-                    {/* </Document> */}
-                    {/* <p>
-                            Page {pageNumber} of {numPages}
-                        </p> */}
-                    {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
-                            <Viewer fileUrl={note.file_url} plugins={[newplugin]} />
-                        </Worker> */}
-                    {/* <PDFViewer document={note.file_url} /> */}
                 </div>
 
                 <button className="viewnote" type="submit" >View DOC</button>

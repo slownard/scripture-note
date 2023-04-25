@@ -8,7 +8,6 @@ import NoteCard from "./NoteCard";
 function NotesContainer() {
     const [note, setNote] = useState([])
 
-
     // FETCH NOTE DATA
     useEffect(() => {
         fetch('/notes')

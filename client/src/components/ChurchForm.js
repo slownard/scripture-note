@@ -88,13 +88,10 @@ function ChurchForm() {
                     type="file"
                     onChange={e => setChurchAvatar(e.target.files[0])}
                     ref={churchForm}
-
                 />
-
 
                 <button type="submit">ADD CHURCH </button>
             </form>
-
         </div>
     )
 }

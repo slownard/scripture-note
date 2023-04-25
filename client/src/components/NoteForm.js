@@ -76,14 +76,6 @@ function NoteForm() {
                     {mapC()}
                 </select>
 
-                {/* <input
-                    type="text"
-                    name="UserId"
-                    placeholder="UserId"
-                    onChange={(e) => setUserId(e.target.value)}
-                    value={userId}
-                /> */}
-
                 <input className="selectnotefile"
                     type="file"
                     onChange={e => {
@@ -93,11 +85,9 @@ function NoteForm() {
                     ref={noteForm}
                 />
 
-
                 <button className="submitnote" type="submit">ADD NOTE</button>
 
             </form>
-
         </div >
     )
 }
