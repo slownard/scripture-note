@@ -16,12 +16,6 @@ Command: Rails s
 Command: npm start --prefix client
 
 
-
-
-
-
-
-
 # Project Template: React/Rails API
 
 ## Description
