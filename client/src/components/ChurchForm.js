@@ -11,6 +11,7 @@ function ChurchForm() {
     const [instagram, setInstagram] = useState('')
 
     const churchForm = useRef()
+    // for persist values between renders. does not cause rerender when updated
 
     const handleSubmitChurch = (e) => {
         e.preventDefault()

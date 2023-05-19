@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import NoteForm from "./NoteForm";
 import NoteCard from "./NoteCard";
 
-// import { Viewer, Worker } from '@react-pdf-viewer/core'
-// import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
-
 function NotesContainer() {
     const [note, setNote] = useState([])
 
