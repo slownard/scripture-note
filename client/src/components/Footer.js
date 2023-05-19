@@ -12,7 +12,6 @@ function Footer() {
                 <a href="https://www.linkedin.com/in/bernard-legaspi-2a0568168/">
                     <img src="link.png" />
                 </a>
-               
             </div>
         </div >
     )

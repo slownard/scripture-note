@@ -30,7 +30,6 @@ function NotesContainer() {
 
     return (
         <div className="notecontainer">
-
             <NoteForm />
             <ul className="notes">
                 {mapNotes}

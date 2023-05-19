@@ -7,12 +7,7 @@ import React from "react";
 
 function NoteCard({ note, removeNote }) {
 
-    // const [viewPdf, setViewPdf] = useState(null)
     console.log(note.file_url)
-
-    // const newplugin = defaultLayoutPlugin()
-    // const numPage, set
-    // function onDocumentLoadSuccess({ null})
 
     return (
 
@@ -20,14 +15,11 @@ function NoteCard({ note, removeNote }) {
 
             <div className="notecard">
 
-                {/* <div className="note__content"> */}
-
                 <div className="note__title">{note.title}</div>
                 <p className="note__text">{note.verse}  </p>
                 <div className="note__detail">
                     <a>{note.church_id} </a>
                     <a>{note.user_id} </a>
-
                 </div>
 
                 <button className="viewnote" type="submit" >View DOC</button>

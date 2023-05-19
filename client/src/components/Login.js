@@ -44,7 +44,6 @@ function Login({ onLogin }) {
                         type="text" name='' required='' onChange={handleChangeUsername} value={username} placeholder='username'
                     />
 
-
                     <input className="pass"
                         type="password" onChange={handleChangePassword} value={password} placeholder='password'
                     />
