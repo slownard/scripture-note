@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+// useref for signup form/form data
+
 function SignUp({ user, setUser }) {
 
     const [selectedImage, setSelectedImage] = useState(null)
@@ -113,9 +115,6 @@ function SignUp({ user, setUser }) {
                     placeholder="bio"
                     onChange={(e) => setBio(e.target.value)}
                     value={bio}
-
-
-
                 />
 
                 <input type="file"
